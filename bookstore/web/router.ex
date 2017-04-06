@@ -7,5 +7,6 @@ defmodule Bookstore.Router do
 
   scope "/api", Bookstore do
     pipe_through :api
+    resources "/books", BookController, except: [:new, :edit]
   end
 end
