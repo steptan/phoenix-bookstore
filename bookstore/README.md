@@ -1,4 +1,14 @@
 # Bookstore
+Our Steps
+  * mix phoenix.gen.json Book books title:string author:string pubdate:string
+  * vim web/router.ex
+    +   scope "/api", Bookstore do
+    +     pipe_through :api
+    +     resources "/books", BookController, except: [:new, :edit]
+    +   end
+  * mix ecto.create
+  * mix ecto.migrate
+  * iex -S mix phoenix.server
 
 To start your Phoenix app:
 
